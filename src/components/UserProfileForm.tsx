@@ -33,7 +33,7 @@ const UserProfileForm = () => {
     if(!res.ok){
       alert("SOmething wrong")
     }else{
-      navigate("home/feed")
+      navigate("/home/feed")
     }
     
   }
