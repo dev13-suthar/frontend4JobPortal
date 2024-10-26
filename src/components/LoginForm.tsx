@@ -19,7 +19,7 @@ const LoginForm = () => {
         <p className='text-4xl font-semibold'><span role="button" onClick={()=>{
             navigate("/")    
         }}>&larr; </span>Welcome,Login here</p>
-        <span className='text-gray-500' onClick={()=>navigate("/signup")}>New here? signup</span>
+        <span className='text-gray-500 cursor-pointer' onClick={()=>navigate("/signup")}>New here? signup</span>
     <Formik
     initialValues={{
         email:"",

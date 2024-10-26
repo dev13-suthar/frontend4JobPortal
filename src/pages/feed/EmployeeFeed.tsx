@@ -1,3 +1,4 @@
+import { Skeleton } from "@/components/ui/skeleton";
 import { BACKEND_URL } from "@/constants";
 import { jobsResponse } from "@/hooks/useGetJobs"
 import { useEffect, useState } from "react"
@@ -20,7 +21,17 @@ const EmployeeFeed = () => {
       getJobs();
     },[])
     if(loading){
-      return "vsvosloadinfb"
+      return (
+        <div className="flex flex-col items-center justify-center py-20 gap-2">
+            {
+              [0,1,2,3].map((i)=>(
+                <Skeleton key={i} className="w-[70%] rounded-[23px] h-10">
+
+                </Skeleton>
+              ))
+            }
+        </div>
+      )
     }
   return (
     <div>
@@ -69,3 +80,6 @@ export const MyjobsCard = ({role,companyLocation,jobType,salaray,applications,id
     </div>
   )
 }
+
+// sampleuser1262@gmail.com
+// 123456

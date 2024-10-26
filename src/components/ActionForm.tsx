@@ -37,7 +37,7 @@ const ActionForm = () => {
         <p className='text-4xl font-semibold'><span role="button" onClick={()=>{
             navigate("/")    
         }}>&larr; </span>Welcome,Register here</p>
-        <span className='text-gray-500' onClick={()=>navigate("/signin")}>Already have account? login</span>
+        <span className='text-gray-500 cursor-pointer' onClick={()=>navigate("/signin")}>Already have account? login</span>
         <Formik 
         initialValues={{
             email:"",
@@ -102,4 +102,3 @@ const ActionForm = () => {
 }
 
 export default ActionForm
-

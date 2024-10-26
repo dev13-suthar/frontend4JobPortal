@@ -14,6 +14,7 @@ const Appbar = () => {
         {userRole==="Employee" && <p className='cursor-pointer' onClick={()=>{
           navigate("/home/newJob")
         }}>Post Job</p>}
+        {userRole==="Employee" && <Link to={"/home/manage"} className='cursor-pointer'>Manage</Link>}
         <div className='relative'>
         <span className='cursor-pointer' onClick={()=>{setshowDialog(t=>!t)}}><UserIcon/></span>
         {showDialog && (

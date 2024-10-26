@@ -14,6 +14,7 @@ import MyApplications from './pages/MyApplications/MyApplications'
 import MyProfile from './pages/profilePage/MyProfile'
 import MyJobInfo from './pages/MyjobsInfo/MyJobInfo'
 import EditJob from './pages/EditJobs/EditJob'
+import ManageJobPage from './pages/manageJobs/ManageJobPage'
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
               <Route path='setProfile' element={<Setprofile/>}/>
               <Route path='feed' element={<Feed/>}/>
               <Route path='newJob' element={<NewJob/>}/>
+              <Route path='manage' element={<ManageJobPage/>}/>
               <Route path='job/:id' element={<SingleJob/>}/>
               <Route path='myApplication' element={<MyApplications/>}/>
               <Route path='me' element={<MyProfile isMe={true}/>}/>

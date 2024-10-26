@@ -2,7 +2,7 @@ import { Formik, FormikHelpers } from "formik"
 import { Input } from "./ui/input"
 import { Textarea } from "./ui/textarea"
 import { Button } from "./ui/button"
-// import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { BACKEND_URL } from "@/constants"
 import { useRecoilValue } from "recoil"
 import { companyLogo } from "@/state/ProfilePicAtom"
@@ -16,6 +16,7 @@ type companyProps = {
 
 const CreateCompanyForm = () => {
   const companyLogoURL = useRecoilValue(companyLogo);
+  const navigate = useNavigate();
   const createCompany = async(values:companyProps)=>{
       const res = await fetch(`${BACKEND_URL}/api/v1/createCompany`,{
         method:"POST",
@@ -26,6 +27,9 @@ const CreateCompanyForm = () => {
         body:JSON.stringify(values)
       });
       const data = await res.json();
+      if(res.ok){
+          navigate("/home/feed")
+      }
       console.log(data) 
   }
 
